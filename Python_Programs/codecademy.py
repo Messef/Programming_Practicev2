@@ -1,35 +1,41 @@
-'''Jiho is having a lot of success with our restaurant application. Unfortunately, our original design did not
- account for storing orders for each specific table. Jiho asked us to adjust our application to be able to store the orders that come in for each specific table and also be able to print out the order for the kitchen staff.
-
-Take some time to review the adjusted structure of the program we created earlier. 
-Note that tables is now dictionary with the table numbers as the keys. It also accounts for a new property called order. 
-The assign_table function has also been adjusted to account for the changes.
-
-Run the code to move onto the next checkpoint.
 '''
+For an upcoming holiday, Jiho plans on making a prix fixe menu for the restaurant. Customers at the restaurant will be able to choose the following:
+
+1 Appetizer
+2 Entrees
+1 Side dish
+2 Scoops of different ice cream flavors for dessert.
+
+To accomplish all these choices, we are going to utilize the different types of 
+arguments that we have learned so far. Now that we’ve set up our 
+goals, hit “Run” to move on to the next step.'''
 tables = {
   1: {
-    'name': 'Jiho',
+    'name': 'Chioma',
     'vip_status': False,
-    'order': 'Orange Juice, Apple Juice'
+    'order': {
+      'drinks': 'Orange Juice, Apple Juice',
+      'food_items': 'Pancakes'
+    }
   },
-  2: {},
+  2: {
+    'name': 'Chioma',
+    'vip_status': False,
+    'order': {
+      'drinks': 'Orange Juice, Apple Juice',
+      'food_items': 'Pancakes'
+  }
+  },
   3: {},
   4: {},
   5: {},
   6: {},
   7: {},
 }
-print(tables)
-orders=[]
-def take_order(*food):
-  global orders
-  for order in food:
-    orders.append(food)
-    order+=1
 
-def assign_table(table_number, name, vip_status=False): 
-  global orders
-  tables[table_number]['name'] = name
-  tables[table_number]['vip_status'] = vip_status
-  tables[table_number]['order'] = orders
+def single_prixe_fixe_order(table_number,appetizer, *entrees, side_dish, **scoops):
+    scoops=scoops.get('scoops')
+    tables[table_number]['order']['food_items']=appetizer, entrees, side_dish,scoops
+    print(tables)
+single_prixe_fixe_order(2,'garlic bread', 'Omelette', 'Steak', side_dish='Fires', scoops=['Chocolate', 'Butterscotch'])
+
