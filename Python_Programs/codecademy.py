@@ -1,27 +1,14 @@
-word="chess"
-letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-def find_unique_letters(word):
-    #Fast way (doesn't work if word has non-alphabetic characters)
-    '''
-    wordSet = set(word)
-    return len(wordSet)
-    '''
-    uniqueSet = set(letters)
-    count = 0
-    for char in word:
-        if char in uniqueSet:
-            count+=1
-            uniqueSet.remove(char)
+def count_char_x(word, x):
+  counter=0
+  letter=0
+  while letter<len(word):
+    if word[letter]==x:
+      counter+=1
+      letter+=1
+    else: 
+      letter+=1
+      continue
+  else: 
+    return counter
 
-    return count
-def unique_english_letters(word):
-  uniques = 0
-  for letter in letters:
-    if letter in word:
-      uniques += 1
-  return uniques
-
-
-
-
-print(find_unique_letters(word))
+print(count_char_x("apple", "p"))
