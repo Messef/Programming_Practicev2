@@ -1,13 +1,12 @@
 '''
-Solution to the two sum problem
+Is an integer a palindrome?
 '''
-nums=[2, 6, 7, 11, 10]
-def twoSum(nums, target: int):
-        hashmap = {}
-        for i in range(len(nums)):
-            hashmap[nums[i]] = i
-        for i in range(len(nums)):
-            complement = target - nums[i]
-            if complement in hashmap and hashmap[complement] != i:
-                return [i, hashmap[complement], hashmap] 
-print(twoSum(nums, 9))
+class Solution:
+   def isPalindrome(x: int) -> bool:
+        new_x = [str(x) for x in str(x)]
+        if new_x == new_x[::-1]:
+            return True, type(new_x)
+        else: 
+            return False
+my_Solution=Solution()
+print(Solution.isPalindrome(121))
