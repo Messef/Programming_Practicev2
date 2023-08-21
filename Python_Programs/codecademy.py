@@ -1,12 +1,27 @@
-'''
-Is an integer a palindrome?
-'''
-class Solution:
-   def isPalindrome(x: int) -> bool:
-        new_x = [str(x) for x in str(x)]
-        if new_x == new_x[::-1]:
-            return True, type(new_x)
-        else: 
-            return False
-my_Solution=Solution()
-print(Solution.isPalindrome(121))
+def romanToInt(s: str) -> int:
+    roman={
+        "I": 1, 
+        "V": 5,
+        "X": 10,
+        "L": 50, 
+        "C": 100,
+        "D": 500,
+        "M": 1000
+    }
+    final_int=0
+    y=0
+    while y<len(s):
+        if y<len(s)-1:
+         if roman[s[y:y+1]]<roman[s[y+1:y+2]]:
+            final_int+=roman[s[y+1:y+2]]-roman[s[y:y+1]]
+            y+=2         
+         else:
+             final_int+=roman[s[y:y+1]]
+             y+=1
+        else:     
+            final_int+=roman[s[y:y+1]]
+            y+=1
+      
+    return final_int
+
+print(romanToInt(''))
