@@ -1,12 +1,18 @@
-def longestCommonPrefix(v=[]):
-        ans=""
-        v.sort()
-        first=v[0]
-        last=v[-1]
-        print(v, first, last)
-        for i in range(min(len(first),len(last))):
-            if(first[i]!=last[i]):
-                return ans
-            ans+=first[i]
-        return ans
-print(longestCommonPrefix(["leet","leetcode","leeches"]))
+def repeatedSubstringPattern(s):
+    x=0
+    original=s
+    substring=original[0:x+1]
+    while substring in original and x<5:
+        substring=original[0:x+1]
+        s=original.replace(substring, "")
+        print(s, substring, x)
+        x+=1
+    
+    else:
+        if type(len(original)/len(substring))==int:
+            return substring
+        else:
+            print('fail')
+            print( substring, s, original, x)
+    
+repeatedSubstringPattern("abcabcabc")
