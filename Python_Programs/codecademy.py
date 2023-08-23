@@ -1,41 +1,14 @@
-def isValid(s: str) -> bool:
-    has={
-        '{': '}',
-        '[': ']',
-        '(':")"
-    }
-    bool=True
-    new_string = [str(s) for s in str(s)]
-    for y in new_string:
-        x=new_string.index(y)
-        print(x)
-        if '(' in new_string:
-            if has[y] in new_string:
-              new_string.remove(has[y])
-              new_string[x]=='x'
-            else: 
-              bool= False
-              break
-
-        elif '{' in new_string:
-            if has[y] in new_string:
-                new_string.remove(has[y])
-                new_string[x]=='x'
-            else: 
-              bool= False
-              break
-              
-            
-        elif '[' in new_string:
-            print(has[y])
-            if has[y] in new_string:
-                new_string.remove(has[y])
-                new_string[x]=='x'
-            else: 
-              bool= False
-              break
-        elif new_string==None:
-           bool= True
-           break
-    return bool    
-print(isValid('([)'))
+nums1=[1, 2]
+nums2=[3, 4]
+def findMedianSortedArrays(nums1=[], nums2=[]) -> float:
+        x=0
+        nums1.extend(nums2)
+        nums1.sort()
+        while len(nums1)>2:
+            nums1.pop(x)
+            nums1.pop(-(x+1))
+        if len(nums1)==1:
+            return nums1
+        else:
+            return (nums1[0]+nums1[1])/2
+print(findMedianSortedArrays(nums1, nums2))

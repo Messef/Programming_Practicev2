@@ -1,17 +1,8 @@
-def isValid(s: str) -> bool:
-    has={
-        '{': '}',
-        '[': ']',
-        '(':")"
-    }
-    stack=[]
-    for x in s:
-     if x in has.keys():
-      stack.append(x)
-     elif x in has.values():
-        if x!=has[stack.pop(-1)]:
-         return False
-        else:
-         continue
-    return len(stack)==0
-print(isValid('[)]('))
+nums=[3,2,2,3]
+def removeElement(val, nums=[]) -> int:
+        
+        while val in nums:
+            nums.pop(nums.index(val))
+        k=len(nums)
+        return k, nums
+print(removeElement(3, nums))
