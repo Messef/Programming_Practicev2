@@ -1,14 +1,41 @@
-nums1=[1, 2]
-nums2=[3, 4]
-def findMedianSortedArrays(nums1=[], nums2=[]) -> float:
-        x=0
-        nums1.extend(nums2)
-        nums1.sort()
-        while len(nums1)>2:
-            nums1.pop(x)
-            nums1.pop(-(x+1))
-        if len(nums1)==1:
-            return nums1
-        else:
-            return (nums1[0]+nums1[1])/2
-print(findMedianSortedArrays(nums1, nums2))
+def intToRoman(num: int) -> str:
+    hashmap={
+            1000:'M',
+            900: 'CM', 
+            500: 'D',
+            400:'CD',
+            100:'C',
+            90:'XC',
+            50:'L',
+            40:'XL',
+            10: 'X',
+            9: 'IX',
+            5: 'V',
+            4:'IV',
+            1:'I',
+            0:''
+            
+        }
+    new_num = [int(num) for num in str(num)]
+    ans=""
+    x=0
+    while x<len(new_num):
+       math=len(new_num)-(x+1)
+       new_num[x]=new_num[x]*10**math
+       x+=1
+    for y in new_num:
+       if y in hashmap:
+        ans+=hashmap[y]
+       else: 
+        counter=0
+        for x in hashmap.keys():
+          if x<y:
+            while (counter+x)<=y and x!=0:
+             print(x, counter, ans)
+             ans+=hashmap[x]
+             counter+=x
+            else:
+              continue
+           
+    return new_num, ans
+print(intToRoman(112))

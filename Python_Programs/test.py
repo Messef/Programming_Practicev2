@@ -1,8 +1,22 @@
-nums=[3,2,2,3]
-def removeElement(val, nums=[]) -> int:
-        
-        while val in nums:
-            nums.pop(nums.index(val))
-        k=len(nums)
-        return k, nums
-print(removeElement(3, nums))
+def intToRoman(num: int) -> str:
+        roman_numerals={
+            1000: "M",
+            900: "CM",
+            500: "D",
+            400: "CD",
+            100: "C",
+            90: "XC",
+            50: "L",
+            40: "XL",
+            10: "X",
+            9: "IX",
+            5: "V",
+            4: "IV",
+            1: "I"
+        }
+        roman=''
+        for value,symbol in roman_numerals.items():
+            while value<=num:
+                roman+=symbol
+                num=num-value
+        return roman
