@@ -1,6 +1,9 @@
-#contains duplicate
-def containsDuplicate(nums: int) -> bool:
-        if len(nums)==len(set(nums)):
-           return False
-        return True
-print(containsDuplicate([1, 2, 3, 4, 5, 1]))
+def reverseBits(n: int) -> int:
+        ans=0
+        n=[int(n) for n in str(n)]
+        for x, y in enumerate(n[::-1]):
+          if y==1:
+            mod=2**(len(n)-x-1)
+            ans+=mod
+        return ans, n
+print(reverseBits(0b10000010100101000001111010011100))
