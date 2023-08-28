@@ -1,12 +1,6 @@
-def removeDuplicates(nums):
-        stack=nums[0]
-        counter=1
-        for x, y in enumerate(nums):
-         
-         if x!=0:
-            if y != stack:
-                stack=y
-                counter+=1
-
-        return counter
-print(removeDuplicates([-1,0,0,0,0,3,3]))
+#contains duplicate
+def containsDuplicate(nums: int) -> bool:
+        if len(nums)==len(set(nums)):
+           return False
+        return True
+print(containsDuplicate([1, 2, 3, 4, 5, 1]))
