@@ -1,19 +1,16 @@
-def lengthOfLongestSubstring( s: str) -> int:
-        seen=[]
-        values=[0]
-        counter=0
-        for  y in s:
-            if y not in seen:
-                seen.append(y)
-                counter+=1
-            else:
-                values.append(counter)
-                seen=seen[seen.index(y):]
-                seen.remove(y)
-                seen.append(y)
-                counter=len(seen)
-        values.append(counter)
-        return max(values)
-            
-            
-print(lengthOfLongestSubstring("aabaab!bb"))
+def buyChoco(prices, money) -> int:
+    l=0
+    r=1
+    output=0
+    prices=sorted(prices)
+    while r < len(prices):
+        sum=prices[l]+prices[r]
+        if sum<=money:
+           output=max(output, money-sum)
+           l=r+1
+        r+=1
+    if l==0:
+     return money
+    else: 
+       return output
+print(buyChoco([1,2,2], 3))
