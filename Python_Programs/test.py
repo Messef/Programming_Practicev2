@@ -1,6 +1,19 @@
-def buyChoco(prices, money) -> int:
-    prices=sorted(prices)
-    if prices[0]+prices[1]<=money:
-        return money-(prices[0]+prices[1])
-    else: return money
-print(buyChoco([4, 12, 9, 1, 2], 3))
+from collections import defaultdict
+def rearrangeCharacters(s: str, target: str) -> int:
+        hashmap = defaultdict(int)
+        for i in s:
+            hashmap[i] += 1
+        print(hashmap)
+        count = 0
+        flag = 0
+        while True:
+            if flag:
+                break
+            for i in target:
+                if hashmap[i] == 0:
+                    flag = 1
+                    break
+                hashmap[i] -= 1
+            count += 1
+        return count-1
+print(rearrangeCharacters("ilovecodingonleetcode", "code"))
