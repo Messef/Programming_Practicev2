@@ -1,17 +1,16 @@
-'''
-You are given two 0-indexed strings s and target. You can take some letters from s and rearrange them to form new strings.
+You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
 
-Return the maximum number of copies of target that can be formed by taking letters from s and rearranging them.
+Find two lines that together with the x-axis form a container, such that the container contains the most water.
+
+Return the maximum amount of water a container can store.
+
+Notice that you may not slant the container.
 
  
 
 Example 1:
 
-Input: s = "ilovecodingonleetcode", target = "code"
-Output: 2
-Explanation:
-For the first copy of "code", take the letters at indices 4, 5, 6, and 7.
-For the second copy of "code", take the letters at indices 17, 18, 19, and 20.
-The strings that are formed are "ecod" and "code" which can both be rearranged into "code".
-We can make at most two copies of "code", so we return 2.
-'''
+
+Input: height = [1,8,6,2,5,4,8,3,7]
+Output: 49
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
