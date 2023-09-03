@@ -1,16 +1,8 @@
-You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
+Write an algorithm to determine if a number n is happy.
 
-Find two lines that together with the x-axis form a container, such that the container contains the most water.
+A happy number is a number defined by the following process:
 
-Return the maximum amount of water a container can store.
-
-Notice that you may not slant the container.
-
- 
-
-Example 1:
-
-
-Input: height = [1,8,6,2,5,4,8,3,7]
-Output: 49
-Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+Starting with any positive integer, replace the number by the sum of the squares of its digits.
+Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+Those numbers for which this process ends in 1 are happy.
+Return true if n is a happy number, and false if not.

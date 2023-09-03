@@ -1,15 +1,9 @@
-def mySqrt(x: int) -> int:
-    l=1
-    r= x // 2
-    while l<=r:
-        mid = (l+r) // 2
-        print(l, mid, r)
-        if mid**2>x:
-            r=mid-1
-        elif mid**2<x:
-            l=mid+1
-        else: 
-            return mid
-    return r
-
-print(mySqrt(8))
+class Solution(object):
+    def isHappy(self, n):
+        hset = set() # no duplicates
+        while n != 1: # continue 
+            if n in hset: return False # if it starts to loop around - shown by if it's in the set in the first place
+            hset.add(n) # add n into the set
+            n = sum([int(i) ** 2 for i in str(n)]) # sum everything together using this method
+        else:
+            return True #after getting it to equal 1, return True
