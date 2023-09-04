@@ -1,8 +1,9 @@
-Write an algorithm to determine if a number n is happy.
+Given an array prices where prices[i] is the price of a given stock on the ith day.
+maximize our profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+Return the maximum profit achieve from this transaction. If you cannot achieve any profit, return 0
 
-A happy number is a number defined by the following process:
-
-Starting with any positive integer, replace the number by the sum of the squares of its digits.
-Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
-Those numbers for which this process ends in 1 are happy.
-Return true if n is a happy number, and false if not.
+Example:
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that, buying on day 2 and selling on day 1 is not allowed because we must buy before sell.

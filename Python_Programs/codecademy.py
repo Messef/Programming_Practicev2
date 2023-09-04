@@ -1,9 +1,12 @@
-class Solution(object):
-    def isHappy(self, n):
-        hset = set() # no duplicates
-        while n != 1: # continue 
-            if n in hset: return False # if it starts to loop around - shown by if it's in the set in the first place
-            hset.add(n) # add n into the set
-            n = sum([int(i) ** 2 for i in str(n)]) # sum everything together using this method
-        else:
-            return True #after getting it to equal 1, return True
+def maxProfit(prices) -> int:
+    if (len(prices))==1: return 0
+    l=0
+    output=0
+    for x, y in enumerate(prices):
+     left=prices[l]
+     if left>=y:
+        l=x
+     else:
+        output = max(output, (y-left))
+    return output
+print(maxProfit([7,1,5,3,6,4]))
