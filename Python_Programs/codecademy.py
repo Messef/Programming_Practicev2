@@ -1,12 +1,12 @@
-def maxProfit(prices) -> int:
-    if len(prices)==1: return 0
-    prof=0
-    l=0
-    for x, y in enumerate(prices): 
-        left=prices[l]
-        print(prices, left, y, prof, (y-left))
-        if y>prices[l]: 
-            prof+=(y-left)
-        l=x
-    return prof
-print(maxProfit([2, 1, 4]))
+def divide(dividend: int, divisor: int) -> int:
+    counter = 0
+    store_dividend = dividend
+    store_divisor = divisor
+    dividend = abs(dividend)
+    divisor = abs(divisor)
+    while dividend >= divisor: 
+        dividend-=divisor
+        counter+=1
+    if store_dividend * store_divisor <0: return (counter-2*counter)
+    else: return counter
+print(divide(1000000000, -3))

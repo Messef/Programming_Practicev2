@@ -1,5 +1,2 @@
-import bisect
-
-class Solution:
-    def searchInsert(self, nums, target: int) -> int:
-        return bisect.bisect_left(nums, target)
+x = [[0, 3], [1, 1]]
+print(x[0][1])
