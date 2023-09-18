@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "app",
+            "request": "launch",
+            "mainClass": "app",
+            "projectName": "Programming_Practicev2_f6095a89"
+        },
+        {
             "name": "launchcpp",
             "type": "cppdbg",
             "request": "launch",
@@ -29,6 +36,5 @@
                 }
             ]
         }
-
     ]
 }

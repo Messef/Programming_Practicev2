@@ -3,11 +3,10 @@ def factors(num, num2,target):
     x= -abs(num//2)
     stack=[num, -num]
     hashmap={}
-    while x <=num//2:
+    while x <=abs(num)//2:
         if x==0: 
             x+=1
             continue
-
         if num%x==0:
             stack.append(x)
         x+=1
@@ -18,5 +17,5 @@ def factors(num, num2,target):
         if complement in hashmap.keys()and hashmap[complement] != x:
             if stack[x]*(target-stack[x])==num: 
                 return stack[x], (target-stack[x])
-    return "none"
-print(factors(6, 5, 16))
+    return "none", stack
+print(factors(1, -18, 3))
