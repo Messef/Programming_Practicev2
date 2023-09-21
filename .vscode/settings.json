@@ -1,4 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "enabled",
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "files.associations": {
+        "string": "cpp"
+    }
 }
