@@ -1,7 +1,18 @@
+// C++ program to initialize
+// a vector from an array.
 #include <iostream>
+#include <vector>
 using namespace std;
-int x = 0;
-int main () {
-    cout<< "Hey Everyone! " << x << endl;
-    return 0;
+
+int main()
+{
+	int arr[] = { 10, 20, 30 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+
+	vector<int> vect(arr, arr + n);
+
+	for (int x : vect)
+		cout << x << " " << vect.size() << " " << endl;
+
+	return 0;
 }
