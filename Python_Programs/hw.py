@@ -1,4 +1,7 @@
-def factors(num, num2,target):
+def factors():
+    num = int(input("enter a num: "))
+    num2 = int(input("enter another num: "))
+    target = int(input("enter a target int: "))
     num*=num2
     x= -abs(num//2)
     stack=[num, -num]
@@ -7,8 +10,9 @@ def factors(num, num2,target):
         if x==0: 
             x+=1
             continue
-        if num%x==0:
+        if num%x==0 and x not in stack:
             stack.append(x)
+            stack.append(int(num/x))
         x+=1
     for x,y in enumerate(stack):
         hashmap[y] = x
