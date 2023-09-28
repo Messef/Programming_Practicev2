@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "app",
+            "request": "launch",
+            "mainClass": "Java_Programs.app",
+            "projectName": "Programming_Practicev2_f6095a89"
+        },
+        {
+            "type": "java",
+            "name": "app",
+            "request": "launch",
+            "mainClass": "Java_Programs.MyFirstProject.bin.app",
+            "projectName": "Programming_Practicev2_f6095a89"
+        },
+        {
+            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "App",
