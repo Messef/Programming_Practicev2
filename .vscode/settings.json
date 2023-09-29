@@ -3,6 +3,7 @@
     "java.debug.settings.onBuildFailureProceed": true,
     "files.associations": {
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "ostream": "cpp"
     }
 }
