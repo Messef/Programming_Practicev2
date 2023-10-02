@@ -1,18 +1,25 @@
-// C++ program to initialize
-// a vector from an array.
 #include <iostream>
 #include <vector>
 using namespace std;
 
-int main()
-{
-	int arr[] = { 10, 20, 30 };
-	int n = sizeof(arr) / sizeof(arr[0]);
+int main() {
+  vector<int> num {1, 2, 3, 4, 5};
 
-	vector<int> vect(arr, arr + n);
+  cout << "Initial Vector: ";
 
-	for (int x : vect)
-		cout << x << " " << vect.size() << " " << endl;
+  for (const int& i : num) {
+    cout << i << "  ";
+  }
+  
+  // add the integers 6 and 7 to the vector
+  num.push_back(6);
+  num.push_back(7);
 
-	return 0;
-}
+  cout << "\nUpdated Vector: ";
+
+  for (const int& i : num) {
+    cout << i << "  ";
+  }
+
+  return 0;
+}  
