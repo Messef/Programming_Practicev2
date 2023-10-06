@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    printf("subscribe!!");
+    printf("slut me out!!");
     return 0;
 }
