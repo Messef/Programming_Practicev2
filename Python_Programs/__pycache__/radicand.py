@@ -10,4 +10,5 @@ def radicand():
     if max == 1: return "can't be factored"
     elif number != 1: return f"{max} rad({int(number)})"  
     else: return max
-print(radicand())
+while True: 
+    print(radicand())
