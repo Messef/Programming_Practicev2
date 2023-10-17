@@ -8,11 +8,10 @@ sw = 0
 line_list[rand]
 theWord = "steel"
 theWord=line_list[rand]
-hashmap = {
-
-
-}
+theWord = theWord[0:5]
+hashmap = {}
 def searchFor(word) -> bool:
+        it = 0
         word=word.lower()
         l=0
         r=len(line_list)
@@ -22,7 +21,9 @@ def searchFor(word) -> bool:
                   l=mid+1
             else: 
                   r=mid
+            it+=1
             if line_list[mid][0:5].lower() == word:
+                print(f"{it} tries!")
                 return True
         return False
 
@@ -35,12 +36,8 @@ def Wordle(guessNum):
  global sw
  i=0
  while i<guessNum:
-    counterhashmap = {
-
-    }
-    hashfin = {
-
-    }
+    counterhashmap = {}
+    hashfin = {}
     guess=input("What is your guess(5 letters)? ")
     
     if len(guess)!=5 or searchFor(guess)==False: 
@@ -77,7 +74,6 @@ def Wordle(guessNum):
                         break
                 if guess[theta] == guess[z]:
                     confirmation.append("n")
-                    print(theta, guess[theta])
                     continue
 
                 confirmation.append("m")

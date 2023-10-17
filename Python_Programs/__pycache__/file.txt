@@ -2746,6 +2746,7 @@ squad
 stack
 staff
 stage
+staid
 stain
 stake
 stamp
@@ -3234,11 +3235,11 @@ yawed
 yawey
 yawls
 yawns
-zones
 zebra
 zests
 zesty
 zetas
+zones
 zorse
 zouks
 zowee
