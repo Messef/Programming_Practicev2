@@ -5,8 +5,6 @@ line_list = text_file.readlines();
 rand = random.randint(0, len(line_list))
 line_list[rand] = line_list[rand].lower()
 sw = 0
-line_list[rand]
-theWord = "steel"
 theWord=line_list[rand]
 theWord = theWord[0:5]
 hashmap = {}
@@ -23,7 +21,6 @@ def searchFor(word) -> bool:
                   r=mid
             it+=1
             if line_list[mid][0:5].lower() == word:
-                print(f"{it} tries!")
                 return True
         return False
 
@@ -40,7 +37,7 @@ def Wordle(guessNum):
     hashfin = {}
     guess=input("What is your guess(5 letters)? ")
     
-    if len(guess)!=5 or searchFor(guess)==False: 
+    if len(guess)!=5 or searchFor(guess)!=True: 
         print("guess in english dict and is 5 chars")
         print(guessNum)
         Wordle(guessNum)
@@ -69,10 +66,12 @@ def Wordle(guessNum):
              if sw == 0: 
                 for it, ittwo in enumerate(guess):
                     sw = 1
-                    if ittwo is not guess[z] and it is not z:
+                    if ittwo == guess[z] and it != z:
                         theta = it
+                        print(f"{theta} is theta  {it, z, ittwo}")
                         break
-                if guess[theta] == guess[z]:
+                if guess[theta] == theWord[theta]:
+                    print(f"{guess[theta]} is guess[theta]")
                     confirmation.append("n")
                     continue
 

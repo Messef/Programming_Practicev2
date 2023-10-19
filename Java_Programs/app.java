@@ -1,9 +1,15 @@
 package Java_Programs;
-import java.util.Scanner;
-public class SecondClass
+class SecondClass
 {
-   public static void main(String[] args)
-   {
-      System.out.println("Hi there!");
+   public SecondClass() {
+
    }
+   public void doSomething() {
+      System.out.println("Inside Second Class");
+   }
+   public static void main(String[] args) {
+      SecondClass myClass = new SecondClass();
+      myClass.doSomething();
+   }
+
 }
