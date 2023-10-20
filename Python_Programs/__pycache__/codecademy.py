@@ -36,8 +36,11 @@ def Wordle(guessNum):
     counterhashmap = {}
     hashfin = {}
     guess=input("What is your guess(5 letters)? ")
-    
-    if len(guess)!=5 or searchFor(guess)!=True: 
+
+    if guess =="reveal":
+        print(theWord)
+        break
+    elif len(guess)!=5 or searchFor(guess)!=True: 
         print("guess in english dict and is 5 chars")
         print(guessNum)
         Wordle(guessNum)
@@ -68,10 +71,8 @@ def Wordle(guessNum):
                     sw = 1
                     if ittwo == guess[z] and it != z:
                         theta = it
-                        print(f"{theta} is theta  {it, z, ittwo}")
                         break
                 if guess[theta] == theWord[theta]:
-                    print(f"{guess[theta]} is guess[theta]")
                     confirmation.append("n")
                     continue
 
