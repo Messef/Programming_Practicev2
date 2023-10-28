@@ -1,3 +1,5 @@
+from board import *
+
 
 class King: 
     def __init__(self, color, coordinate, rawcoordinate, wantMove):
@@ -25,3 +27,6 @@ class King:
         if (bool1 or bool2 or bool3) and myBoard.state[validRank-1][validFile-1] == "e":
             return myBoard.state
         return "cannot move there"
+
+WhiteKing = King("b", "no coord found", "no coord found", ["e", 8])
+
