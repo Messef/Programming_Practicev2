@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "runner",
+            "request": "launch",
+            "mainClass": "Java_Programs.runner",
+            "projectName": "Programming_Practicev2_f6095a89"
+        },
+        {
+            "type": "java",
             "name": "SecondClass",
             "request": "launch",
             "mainClass": "Java_Programs.SecondClass",

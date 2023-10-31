@@ -1,5 +1,3 @@
-from king import *
-from pawn import *
 from colors import *
 
 
@@ -20,6 +18,12 @@ def myQuery(object):
 
 
 
-print(WhiteEPawn.change_state())
-print(BlackEPawn.change_state())
-print(WhiteKKnight.change_state())
+WhiteEPawn.change_state()
+
+BlackEPawn.change_state()
+
+WhiteKKnight.change_state()
+
+print(BlackQKnight.change_state())
+
+

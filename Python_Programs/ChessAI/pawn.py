@@ -17,6 +17,7 @@ class Pawn:
                     break
         return self.coord, self.rawCoord
     def valid_move(self):
+        self.get_coord( )
         selfFile = self.rawCoord[0]-1
         selfRank = self.rawCoord[1]-1
         validFile = revFiles[self.wantMove[0]]-1
@@ -28,7 +29,6 @@ class Pawn:
             return True
         return "cannot move there"
     def change_state(self):
-        self.get_coord()
         self.valid_move()
         selfFile = self.rawCoord[0]-1
         selfRank = self.rawCoord[1]-1
@@ -38,7 +38,10 @@ class Pawn:
             myBoard.state[validRank][validFile] = f"p{self.color}{self.file}"
             myBoard.state[selfRank][selfFile] = "e"
             self.moves = False
-            return myBoard.state
+            return myBoard.state, True
 
         return False
+#BlackEPawn = Pawn("b", "e", "no coord found", "no coord found", ["e", 5], True)
+#WhiteEPawn = Pawn("w", "e", "no coord found", "no coord found", ["e", 4], True)
 
+#print(WhiteEPawn.get_coord())s

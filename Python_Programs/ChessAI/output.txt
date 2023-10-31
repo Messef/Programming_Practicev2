@@ -1,0 +1,14 @@
+bikeOne.printBicycle();
+        bikeOne.modifyGears(8);
+        bikeOne.newFrameOrColor(35);
+        bikeOne.newFrameOrColor("Green");
+        bikeOne.newWheelSize(30);
+        bikeOne.shippedTo(true, "Sam's house");
+        bikeOne.printBicycle();
+        bikeOne.modifyGears(3);
+        bikeOne.newFrameOrColor(40);
+        bikeOne.newFrameOrColor("Gray");
+        bikeOne.newWheelSize(30);
+        bikeOne.shippedTo(false, "Return Center");
+        bikeOne.printBicycle();
+        bikeOne.printBicycle();

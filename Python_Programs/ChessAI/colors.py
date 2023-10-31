@@ -31,5 +31,5 @@ BlackGPawn = Pawn("b", "g", "no coord found", "no coord found", ["e", 5], True)
 BlackHPawn = Pawn("b", "h", "no coord found", "no coord found", ["e", 5], True)
 
 #Knights: 
-BlackKKnight = Knight("b", "k", "no coord found", "no coord found", ["f",6])
-WhiteKKnight = Knight("b", "k", "no coord found", "no coord found", ["f",3])
+BlackQKnight = Knight("b", "q", "no coord found", "no coord found", ["c",6])
+WhiteKKnight = Knight("w", "k", "no coord found", "no coord found", ["f",3])

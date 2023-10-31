@@ -22,7 +22,7 @@ revFiles = {
 
 }
 initial_state = [
-        ['rw', 'nwq', 'bw', 'qw', 'kw', 'bw', 'nwq', 'rw'],
+        ['rw', 'nwq', 'bw', 'qw', 'kw', 'bw', 'nwk', 'rw'],
         ['pwa', 'pwb', 'pwc', 'pwd', 'pwe', 'pwf', 'pwg', 'pwh'],
         ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
         ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
@@ -32,7 +32,7 @@ initial_state = [
         ['rb', 'nbq', 'bb', 'qb', 'kb', 'bb', 'nbk', 'rb']
         ]
 state = [
-        ['rw', 'nwq', 'bw', 'qw', 'kw', 'bw', 'nwq', 'rw'],
+        ['rw', 'nwq', 'bw', 'qw', 'kw', 'bw', 'nwk', 'rw'],
         ['pwa', 'pwb', 'pwc', 'pwd', 'pwe', 'pwf', 'pwg', 'pwh'],
         ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
         ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
