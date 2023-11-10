@@ -25,5 +25,6 @@ BlackEPawn.change_state()
 WhiteKKnight.change_state()
 
 print(BlackQKnight.change_state())
-
+WhiteKKnight.wantMove = ["d", 4]
+print(WhiteKKnight.change_state())
 

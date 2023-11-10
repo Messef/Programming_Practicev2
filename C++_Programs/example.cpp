@@ -1,9 +1,14 @@
 #include <iostream>
-#include <vector>
-using namespace std;
 
 int main() {
-  cout << "slut me out by nle choppa 💯💯💯";
-
-  return 0;
-}  
+  // Add your code below  
+  double weight;
+ std::cout<<"weight of an item? " <<std::endl;
+std::cin>>weight;
+double dist;
+ std::cout<<"distance in miles? " <<std::endl;
+std::cin>>dist;
+std::cout << "obj would weight: " << .38 * weight << std::endl;
+std::cout << "miles to km: " << dist * 1.609 << std::endl;
+return 0;
+}

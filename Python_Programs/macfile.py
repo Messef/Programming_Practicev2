@@ -18,4 +18,4 @@ def factors(num, num2,target):
             if stack[x]*(target-stack[x])==num: 
                 return stack[x], (target-stack[x])
     return "none", stack
-print(factors(1, -18, 3))
+print(factors(-4, -41, 24))

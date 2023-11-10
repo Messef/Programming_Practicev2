@@ -13,7 +13,7 @@ public void printSum(int x, double y)
 
 {
 
-System.out.println(x + y);
+System.out.println(x + y); 
 
 }
 
@@ -23,7 +23,7 @@ public void printProduct(double x, int y)
 
 {
 
-System.out.println(x * y);
+System.out.println(("hi"));
 
 }
 public void other() {

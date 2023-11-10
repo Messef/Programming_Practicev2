@@ -24,20 +24,20 @@ revFiles = {
 initial_state = [
         ['rw', 'nwq', 'bw', 'qw', 'kw', 'bw', 'nwk', 'rw'],
         ['pwa', 'pwb', 'pwc', 'pwd', 'pwe', 'pwf', 'pwg', 'pwh'],
-        ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
-        ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
-        ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
-        ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
+        ['es', 'es', 'es', 'es', 'es', 'es', 'es', 'es'],
+        ['es', 'es', 'es', 'es', 'es', 'es', 'es', 'es'],
+        ['es', 'es', 'es', 'es', 'es', 'es', 'es', 'es'],
+        ['es', 'es', 'es', 'es', 'es', 'es', 'es', 'e'],
         ['pba', 'pbb', 'pbc', 'pbd', 'pbe', 'pbf', 'pbg', 'pbh'],
         ['rb', 'nbq', 'bb', 'qb', 'kb', 'bb', 'nbk', 'rb']
         ]
 state = [
         ['rw', 'nwq', 'bw', 'qw', 'kw', 'bw', 'nwk', 'rw'],
         ['pwa', 'pwb', 'pwc', 'pwd', 'pwe', 'pwf', 'pwg', 'pwh'],
-        ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
-        ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
-        ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
-        ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
+        ['es', 'es', 'es', 'es', 'es', 'es', 'es', 'es'],
+        ['es', 'es', 'es', 'es', 'es', 'es', 'es', 'es'],
+        ['es', 'es', 'es', 'es', 'es', 'es', 'es', 'es'],
+        ['es', 'es', 'es', 'es', 'es', 'es', 'es', 'es'],
         ['pba', 'pbb', 'pbc', 'pbd', 'pbe', 'pbf', 'pbg', 'pbh'],
         ['rb', 'nbq', 'bb', 'qb', 'kb', 'bb', 'nbk', 'rb']
         ]

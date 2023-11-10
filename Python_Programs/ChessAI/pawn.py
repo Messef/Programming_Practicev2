@@ -25,7 +25,7 @@ class Pawn:
         bool1 =  (abs(validFile-selfFile)==0 and abs(validRank-selfRank)==2 and self.moves) 
         bool2 = (abs(validFile-selfFile) == 0 and abs(validRank-selfRank) == 1) 
         bool3 = (abs(validFile-selfFile) == 1 and abs(validRank-selfRank) == 1)
-        if (bool1 or bool2 or bool3) and myBoard.state[validRank][validFile] == "e":
+        if (bool1 or bool2 or bool3) and myBoard.state[validRank][validFile] == "es":
             return True
         return "cannot move there"
     def change_state(self):
@@ -36,7 +36,7 @@ class Pawn:
         validRank = self.wantMove[1]-1
         if Pawn.valid_move(self)== True:
             myBoard.state[validRank][validFile] = f"p{self.color}{self.file}"
-            myBoard.state[selfRank][selfFile] = "e"
+            myBoard.state[selfRank][selfFile] = "es"
             self.moves = False
             return myBoard.state, True
 
