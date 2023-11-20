@@ -1,18 +1,131 @@
-// C++ program to initialize
-// a vector from an array.
 #include <iostream>
 #include <vector>
-using namespace std;
 
-int main()
-{
-	int arr[] = { 10, 20, 30 };
-	int n = sizeof(arr) / sizeof(arr[0]);
+// Define functions
 
-	vector<int> vect(arr, arr + n);
 
-	for (int x : vect)
-		cout << x << " " << vect.size() << " " << endl;
 
-	return 0;
+
+void display_misses(int misses) {
+
+  if (misses == 0 || misses == 1) {
+
+    std::cout << "                 .                            \n";
+    std::cout << "                 |                            \n";
+    std::cout << "              .-\"^\"-.                       \n";
+    std::cout << "             /_....._\\                       \n";
+    std::cout << "         .-\"`         `\"-.                  \n";
+    std::cout << "        (  ooo  ooo  ooo  )                   \n";
+    std::cout << "         '-.,_________,.-'    ,-----------.   \n";
+    std::cout << "              /     \\        (  Send help! ) \n";
+    std::cout << "             /   0   \\      / `-----------'  \n";
+    std::cout << "            /  --|--  \\    /                 \n";
+    std::cout << "           /     |     \\                     \n";
+    std::cout << "          /     / \\     \\                   \n";
+    std::cout << "         /               \\                   \n";
+
+  }
+  else if (misses == 2) {
+
+    std::cout << "                 .                            \n";
+    std::cout << "                 |                            \n";
+    std::cout << "              .-\"^\"-.                       \n";
+    std::cout << "             /_....._\\                       \n";
+    std::cout << "         .-\"`         `\"-.                  \n";
+    std::cout << "        (  ooo  ooo  ooo  )                   \n";
+    std::cout << "         '-.,_________,.-'    ,-----------.   \n";
+    std::cout << "              /  0  \\        (  Send help! ) \n";
+    std::cout << "             / --|-- \\      / `-----------'  \n";
+    std::cout << "            /    |    \\    /                 \n";
+    std::cout << "           /    / \\    \\                    \n";
+    std::cout << "          /             \\                    \n";
+    std::cout << "         /               \\                   \n";
+
+  }
+  else if (misses == 3) {
+
+    std::cout << "                 .                            \n";
+    std::cout << "                 |                            \n";
+    std::cout << "              .-\"^\"-.                       \n";
+    std::cout << "             /_....._\\                       \n";
+    std::cout << "         .-\"`         `\"-.                  \n";
+    std::cout << "        (  ooo  ooo  ooo  )                   \n";
+    std::cout << "         '-.,_________,.-'    ,-----------.   \n";
+    std::cout << "              /--|--\\        (  Send help! ) \n";
+    std::cout << "             /   |   \\      / `-----------'  \n";
+    std::cout << "            /   / \\   \\    /                \n";
+    std::cout << "           /           \\                     \n";
+    std::cout << "          /             \\                    \n";
+    std::cout << "         /               \\                   \n";
+
+  }
+  else if (misses == 3) {
+
+    std::cout << "                 .                            \n";
+    std::cout << "                 |                            \n";
+    std::cout << "              .-\"^\"-.                       \n";
+    std::cout << "             /_....._\\                       \n";
+    std::cout << "         .-\"`         `\"-.                  \n";
+    std::cout << "        (  ooo  ooo  ooo  )                   \n";
+    std::cout << "         '-.,_________,.-'    ,-----------.   \n";
+    std::cout << "              /--|--\\        (  Send help! ) \n";
+    std::cout << "             /   |   \\      / `-----------'  \n";
+    std::cout << "            /   / \\   \\    /                \n";
+    std::cout << "           /           \\                     \n";
+    std::cout << "          /             \\                    \n";
+    std::cout << "         /               \\                   \n";
+
+  }
+  else if (misses == 4) {
+
+    std::cout << "                 .                            \n";
+    std::cout << "                 |                            \n";
+    std::cout << "              .-\"^\"-.                       \n";
+    std::cout << "             /_....._\\                       \n";
+    std::cout << "         .-\"`         `\"-.                  \n";
+    std::cout << "        (  ooo  ooo  ooo  )                   \n";
+    std::cout << "         '-.,_________,.-'    ,-----------.   \n";
+    std::cout << "              /  |  \\        (  Send help! ) \n";
+    std::cout << "             /  / \\  \\      / `-----------' \n";
+    std::cout << "            /         \\    /                 \n";
+    std::cout << "           /           \\                     \n";
+    std::cout << "          /             \\                    \n";
+    std::cout << "         /               \\                   \n";
+
+  }
+  else if (misses == 5) {
+
+    std::cout << "                 .                            \n";
+    std::cout << "                 |                            \n";
+    std::cout << "              .-\"^\"-.                       \n";
+    std::cout << "             /_....._\\                       \n";
+    std::cout << "         .-\"`         `\"-.                  \n";
+    std::cout << "        (  ooo  ooo  ooo  )                   \n";
+    std::cout << "         '-.,_________,.-'    ,-----------.   \n";
+    std::cout << "              / / \\ \\        (  Send help! )\n";
+    std::cout << "             /       \\      / `-----------'  \n";
+    std::cout << "            /         \\    /                 \n";
+    std::cout << "           /           \\                     \n";
+    std::cout << "          /             \\                    \n";
+    std::cout << "         /               \\                   \n";
+
+  }
+  else if (misses == 6) {
+
+    std::cout << "                 .                            \n";
+    std::cout << "                 |                            \n";
+    std::cout << "              .-\"^\"-.                       \n";
+    std::cout << "             /_....._\\                       \n";
+    std::cout << "         .-\"`         `\"-.                  \n";
+    std::cout << "        (  ooo  ooo  ooo  )                   \n";
+    std::cout << "         '-.,_________,.-'    ,-----------.   \n";
+    std::cout << "              /     \\        (  Send help! ) \n";
+    std::cout << "             /       \\      / `-----------'  \n";
+    std::cout << "            /         \\    /                 \n";
+    std::cout << "           /           \\                     \n";
+    std::cout << "          /             \\                    \n";
+    std::cout << "         /               \\                   \n";
+
+  }
+
 }
