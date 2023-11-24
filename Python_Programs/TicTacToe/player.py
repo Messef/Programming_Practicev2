@@ -58,4 +58,4 @@ class smartComputerPlayer(Player):
         
         elif not state.empty_squares():
             return {'position': None, 'score': 0}
-        # Work on it later
+        # Work on it later 
