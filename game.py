@@ -108,6 +108,16 @@ def play(game, x_player, o_player, print_game=True):
 
 if __name__ == '__main__':
     x_player = SmartComputerPlayer('X')
-    o_player = HumanPlayer('O')
+    o_player = RandomComputerPlayer('O')
+    x_wins = 0
+    o_wins = 0
+    ties = 0
     t = TicTacToe()
-    play(t, x_player, o_player, print_game=True)
+    for i in range(1000):
+        result = play(t, x_player, o_player, print_game=False)
+        if result == "X":
+            x_wins+=1
+        elif result == "O":
+            o_wins+=1
+        else: ties+=1
+    print(F"{x_wins} - X wins: {o_wins} - O wins: {ties} - Ties")
