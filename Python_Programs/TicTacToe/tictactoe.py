@@ -1,6 +1,6 @@
 import time
 import math
-from player import *
+from Python_Programs.TicTacToe.myplayer import *
 class TicTacToe:
     def __init__(self):
         self.board=[' ' for _ in range(9)]
@@ -77,11 +77,12 @@ class TicTacToe:
     def available_moves(self): 
         return (x for x, y in enumerate(self.board) if y == ' ')
     def num_empty_squares(self):
-        return len(self.available_moves)
-        #return self.board.count(" ") was also good 
+        # return len(self.available_moves) -->Generator cannot be counted in length
+        return self.board.count(" ")# is the best
     '''def make_move(self, player): 
         return self.board[player.get_move] == player.letter --> My code'''
     def make_move(self, square, letter):
+        #print(square, type(square))
         if self.board[square] == ' ':
             self.board[square] = letter
             if self.get_winner(square, letter):
@@ -102,7 +103,7 @@ def game(game, x_player, o_player, print_game = True):
         else:
             square = x_player.get_move(game)
             letter == "O"
-        print(square, type(square))
+        #print(square, type(square)) <--- This one was to debug the thing
         if game.make_move(square, letter): 
             if print_game: 
                 print(letter + f" makes a move to square {square}")
@@ -114,12 +115,26 @@ def game(game, x_player, o_player, print_game = True):
                     print(game.get_winner(square, letter))
                 return letter
             letter = 'O' if letter == 'X' else "X"
-        time.sleep(1)
+        if print_game==True:
+            #time.sleep(2)
+            pass
     if print_game:
             print("It's a tie!!")
 if __name__ == '__main__':
-    otherCompPlayer = RandomComputer("X")
-
-    compPlayer = RandomComputer("O")
+    otherCompPlayer = RandomComputer("O")
+    x_wins = 0
+    o_wins = 0
+    ties = 0
+    compPlayer = MyComputerPlayer("X")
     t = TicTacToe()
-    game(t, otherCompPlayer, compPlayer)
+    for i in range(1000):
+        result = game(t, otherCompPlayer, compPlayer, print_game = False)
+        if result == "X":
+         x_wins+=1
+        elif result == "O":
+            o_wins+=1
+        else:
+            ties+=1
+    print(f"\n My computer won {o_wins} times and the other computer won {x_wins} times. There were {ties} ties\n")
+    
+
