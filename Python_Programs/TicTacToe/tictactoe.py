@@ -126,8 +126,8 @@ if __name__ == '__main__':
     o_wins = 0
     ties = 0
     compPlayer = MyComputerPlayer("X")
-    t = TicTacToe()
     for i in range(1000):
+        t = TicTacToe()
         result = game(t, otherCompPlayer, compPlayer, print_game = False)
         if result == "X":
          x_wins+=1
