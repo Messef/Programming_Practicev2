@@ -11,7 +11,7 @@ Programmer Beast Mode Spotify playlist: https://open.spotify.com/playlist/4Akns5
 
 import math
 import time
-from player import HumanPlayer, RandomComputerPlayer, SmartComputerPlayer
+from player import HumanPlayer, RandomComputerPlayer, SmartComputerPlayer, MyComputerPlayer
 
 
 class TicTacToe():
@@ -107,17 +107,19 @@ def play(game, x_player, o_player, print_game=True):
 
 
 if __name__ == '__main__':
-    x_player = SmartComputerPlayer('X')
-    o_player = RandomComputerPlayer('O')
+    x_player = RandomComputerPlayer('X')
+    o_player = MyComputerPlayer('O')
     x_wins = 0
     o_wins = 0
     ties = 0
-    t = TicTacToe()
-    for i in range(1000):
-        result = play(t, x_player, o_player, print_game=False)
+    for i in range(10):
+        t = TicTacToe() # IMPORTANT PIECE OF CODE
+        print_game = True if i < 3 else False
+        result = play(t, x_player, o_player, print_game)
         if result == "X":
             x_wins+=1
         elif result == "O":
             o_wins+=1
         else: ties+=1
+        print(f"{x_wins+o_wins + ties} games played")
     print(F"{x_wins} - X wins: {o_wins} - O wins: {ties} - Ties")

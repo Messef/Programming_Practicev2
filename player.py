@@ -91,3 +91,50 @@ class SmartComputerPlayer(Player):
                 if sim_score['score'] < best['score']:
                     best = sim_score
         return best
+class MyComputerPlayer(SmartComputerPlayer):
+    def __init__(self, letter):
+        super().__init__(letter) # Inheritance
+    def get_move(self, game):
+        list = []
+        for y in game.available_moves():
+            list.append(y)
+        if len(list) == 9:
+            square = random.randint(0, len(list)-1)
+        else:
+            move = self.minimax(game, self.letter)
+            square = move['position']
+        return square
+    def minimax(self, state, player):
+        max_player = self.letter
+        other_player = 'O' if player == 'X' else 'X'
+
+        if state.current_winner == other_player:
+            return {
+                'position': None,
+                'score': (state.num_empty_squares() + 1) if other_player == max_player else -1*(state.num_empty_squares() + 1)
+            }
+        
+        elif not state.empty_squares():
+            return {'position': None, 'score': 0}
+        # Work on it later 
+        if player == max_player:
+            best = {'position': None, 'score': -math.inf} # you try to bring the score up
+        else:
+            best = {'position': None, 'score': math.inf} # Opponent tries to bring the score down
+
+        for possible_move in state.available_moves():
+            state.make_move(possible_move, player) # Makes an arbitrary move
+            sim_score = self.minimax(state, other_player) # We alternate players here
+            state.board[possible_move] = ' '
+            state.current_winner = None
+            sim_score['position'] = possible_move
+
+            if player == max_player:
+                if sim_score['score'] > best['score']:
+                    best = sim_score
+            else:
+                if sim_score['score'] <best['score']:
+                    best = sim_score
+        return best
+
+
