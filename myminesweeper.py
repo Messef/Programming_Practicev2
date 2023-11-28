@@ -1,7 +1,6 @@
-import time
 import random
 class Game(): 
-    def __init__(self, difficulty = 1, board = [], guess = 1, flag = False, minesLocation = [], showBoard = [], cor = 0):
+    def __init__(self, difficulty = 3, board = [], guess = 1, flag = False, minesLocation = [], showBoard = [], cor = 0):
         self.board = board
         self.difficulty = difficulty
         self.guess = guess
@@ -92,23 +91,39 @@ class Game():
         
     def guessHandler(self):
         #self.displayBoard()
-        self.takeGuess()
-        self.displayBoard()
+        #print("doneee")
         if self.flag == True:
             self.showBoard[self.guess] = "f"
+            #print("here1")
+            self.displayBoard()
+            self.takeGuess()
             return None
         
         elif self.cor == (len(self.board) - len(self.minesLocation)):
+            #print("here")
+            self.realDisplay()
             return True
         else:
+         try:
             if self.board[self.guess] == "m":
-                print("you lose!")
-                print(self.board)
+                #print("you lose!")
+                self.realDisplay()
+                #self.board[self.guess] = "    M     "
                 return False
+            elif self.showBoard[self.guess] != " " and self.showBoard[self.guess] != "f" :
+             print(f"another num1 {self.showBoard[self.guess]}")
+             self.takeGuess()
             else:
-                print("ok, good guess")
+                #print("ok, good guess")
                 self.showBoard[self.guess] = self.board[self.guess]
+                self.displayBoard()
+                self.cor+=1
+                self.takeGuess()
                 return None
+            
+         except IndexError:
+             print("another num")
+             self.takeGuess()
         
     def displayBoard(self):
         rep = ''
@@ -118,15 +133,38 @@ class Game():
                     rep+=f"| {self.showBoard[(i*8)+x]} |"
                     if x==7: rep+="\n"
         elif self.difficulty == 2:
-            rep+="\n"
             for i in range(16):
+                rep+="\n"
                 for x in range(16):
                     rep+=f"| {self.showBoard[(i*16)+x]} |"
             #rep+=f"| {i*16+x} |"
         else:
             for i in range(16):
+                rep+="\n"
                 for x in range(30):
                     rep+=f"|{self.showBoard[(i*30)+x]}|"
+            #rep+=f"| {i*16+x} |"
+            rep+="\n"
+        print(rep)
+    def realDisplay(self):
+        rep = ''
+        if self.difficulty == 1:
+            for i in range(8):
+                rep+="\n"
+                for x in range(8):
+                    rep+=f"| {self.board[(i*8)+x]} |"
+        elif self.difficulty == 2:
+            for i in range(16):
+                print(len(self.board))
+                rep+="\n"
+                for x in range(16):
+                    rep+=f"|{self.board[(i*16)+x]}|"
+            #rep+=f"| {i*16+x} |"
+        else:
+            for i in range(16):
+                rep+="\n"
+                for x in range(30):
+                    rep+=f"|{self.board[(i*30)+x]}|"
             #rep+=f"| {i*16+x} |"
             rep+="\n"
         print(rep)
@@ -141,26 +179,35 @@ class Game():
         try:
             self.guess = int(self.guess)
         except ValueError:
+            #print("here")
             self.guess = self.guess[1:]
             self.guess = int(self.guess)
             self.guess-=1
             self.flag = True
+            self.guessHandler()
 
         else:
+            #print("here2")
             self.guess-=1
             self.flag = False
+            self.guessHandler()
+            
     
 
 
 myGame = Game()
+
 myGame.generator()
+
+myGame.takeGuess()
 result = myGame.guessHandler()
 rep = ''
-myGame.takeGuess()
 while result == None:
     myGame.takeGuess()
-if result == True: print('you win')
-else: print('lol')
+    myGame.guessHandler()
+if result: print('you win')
+else: print('lose')
 
+#myGame.realDisplay()
 
 

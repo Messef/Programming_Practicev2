@@ -1,6 +1,8 @@
 newFunction();
 
 function newFunction() {
-    console.log("Hello World! " + x);
     var x = 5;
+    console.log('Hello World! ${x}' );
+    var y = prompt("Hello world!");
+    console.log(y)
 }
