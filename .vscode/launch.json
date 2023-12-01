@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Runner",
+            "request": "launch",
+            "mainClass": "Java_Programs.Runner",
+            "projectName": "Programming_Practicev2_f6095a89"
+        },
+        {
+            "type": "java",
             "name": "CodeChecker",
             "request": "launch",
             "mainClass": "Java_Programs.CodeChecker",
