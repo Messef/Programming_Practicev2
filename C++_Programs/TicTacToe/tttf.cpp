@@ -31,13 +31,13 @@ bool checkWin(std::vector<char> game, char letter, int move) {
 }
 
 void makeMove(std::vector<char> game, int move, char letter) {
-    if (game[move] == ' ' ) {
+    if (game[move] == ' ' || game[move] == 'T') {
     game[move] = letter;
-    std::cout<<"makeMove was called here asw";
-    std::cout<< game[move];
+    //std::cout<<"makeMove was called here asw" << std::endl;
+    std::cout<< game[move] << std::endl;
 
     }
-    std::cout<<"makeMove was called" << std::endl;
+    //std::cout<<"makeMove was called" << std::endl;
 
 
 }
@@ -46,9 +46,13 @@ void makeMove(std::vector<char> game, int move, char letter) {
 void displayBoard(std::vector<char> game) {
     for (int row = 0; row < 3; row++) {
         for (int col = 0; col < 3; col++) {
+        std:: cout << row*3+col;
         std::cout<<"|" << game[row*3+col] << "|";
         }
         std::cout << std::endl;
+    }
+    for (int i = 0; i<9; i++) {
+        std::cout<<game[i] << std::endl;
     }
 }
 
