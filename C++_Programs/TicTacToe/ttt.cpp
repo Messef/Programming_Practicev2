@@ -1,11 +1,12 @@
 #include <iostream>
 #include "tttf.cpp"
+using namespace std;
 std::vector<char> game;
 char side = 'X';
 int main() {
 for (int i = 0; i<9; i++) {
-    game.push_back('T');
-    std::cout << "here" << std::endl;
+    game.push_back(' ');
+    //std::cout << "here" << std::endl;
 }
 int move;
 while (checkWin(game, side, move) == false) {
@@ -13,9 +14,9 @@ while (checkWin(game, side, move) == false) {
     std::cin>>move;
     std::cout << move << std::endl;
     makeMove(game, move, side);
-    for (int i = 0; i<9; i++) {
+    /*for (int i = 0; i<9; i++) {
         std::cout<<game[i] << std::endl;
-    }
+    }*/
     displayBoard(game);
     
     checkWin(game, side, move);
