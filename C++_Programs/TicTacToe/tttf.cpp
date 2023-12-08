@@ -2,24 +2,10 @@
 #include <vector>
 #include <string>
 bool checkWin(std::vector<char> game, char letter, int move) {
-    int correct;
-    int colCheck[4] = {-3, 3, -6, 6};
-    for (int i : colCheck) {
-        int checker = colCheck[i] + move;
-        if ((checker + move) < 9 &&  (checker + move) > 0) {
-            std:: cout << "checked" << checker << colCheck[i] << game[checker] << std::endl;
-            if (game[checker] == letter) {
-                std::cout << "here" << std::endl;
-                correct++;
-
-            }
-       }
-
-    }
-    std::cout<< correct << std::endl;
-    if (correct == 3) {
+    if ((game[0] == letter && game[3] == letter && game[6] == letter) || (game[1] == letter && game[4] == letter && game[7] == letter) || (game[2] == letter && game[5] == letter && game[8] == letter)) {
         return true;
     }
+
     if (game[0] == letter && game[1] == letter && game[2] == letter) {
             return true;
         } else if (game[3] == letter && game[4] == letter && game[5] == letter) {
@@ -66,5 +52,20 @@ void displayBoard(std::vector<char> game) {
     /*for (int i = 0; i<9; i++) {
         std::cout<<game[i] << std::endl;
     }*/
+}
+bool checkTie(std::vector<char> game) {
+    int counter = 0;
+    for (char a: game) {
+
+        if (a != ' ')  {
+            counter++;
+        }
+    }
+    if (counter == 9) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
